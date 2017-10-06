@@ -6,27 +6,27 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/06 03:19:20 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/06 03:39:07 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/06 18:30:15 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "queen.h"
 
-void		ft_print(int *t)
+void		ft_print(int *t, int size)
 {
 	int		i;
 	int		j;
 
 	i = 0;
-	while (i < 16)
+	while (i <= size * 2)
 	{
-		ft_putstr("_");
+		ft_putstr("-");
 		i = i + 1;
 	}
 	i = 0;
 	ft_putstr("\n");
-	while (i < 8)
+	while (i < size)
 	{
 		j = 0;
 		while (j < t[i])
@@ -35,7 +35,7 @@ void		ft_print(int *t)
 			j = j + 1;
 		}
 		ft_putstr("|x");
-		while (j < 8)
+		while (j < size)
 		{
 			ft_putstr("| ");
 			j = j + 1;
@@ -44,9 +44,9 @@ void		ft_print(int *t)
 		i = i + 1;
 	}
 	i = 0;
-	while (i < 16)
+	while (i <= size * 2)
 	{
-		ft_putstr("_");
+		ft_putstr("-");
 		i = i + 1;
 	}
 	ft_putstr("\n");

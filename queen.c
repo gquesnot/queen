@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/06 01:01:14 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/06 03:51:22 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/06 18:31:58 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,24 @@ int			ft_is_safe(int *t, int x, int y)
 	return (1);
 }
 
-void		set_queen(int *t, int x, int *res, void (*f)(int *))
+void		set_queen(int *t, int x, int *res, int size)
 {
 	int		i;
 
 	i = 0;
-	if (x == 8)
+	if (x == size)
 	{
 		*res = *res + 1;
-		f(t);
+		ft_print(t, size);
 	}
 	else
 	{
-		while (i < 8)
+		while (i < size)
 		{
 			if (ft_is_safe(t, x, i) == 1)
 			{
 				t[x] = i;
-				set_queen(t, x + 1, res,(*f));
+				set_queen(t, x + 1, res, size);
 				t[x] = 0;
 			}
 			i = i + 1;
@@ -54,14 +54,21 @@ void		set_queen(int *t, int x, int *res, void (*f)(int *))
 	}
 }
 
-int			main(void)
+int			main(int ac, char **av)
 {
 	int		res;
 	int		*t;
+	int		size;
 
-	t = malloc(8 * sizeof(int));
+	if(ac == 1)
+		size = 8;
+	else if(ac == 2)
+		size = ft_atoi(av[1]);
+	else 
+		return (0);
+	t = malloc(size * sizeof(int));
 	res = 0;
-	set_queen(t, 0, &res, &ft_print);
+	set_queen(t, 0, &res, size);
 	ft_putstr("\nnombre de solution : ");
 	ft_putnbr(res);
 	ft_putchar('\n');

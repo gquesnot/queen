@@ -6,7 +6,7 @@
 /*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/01 19:36:07 by gquesnot          #+#    #+#             */
-/*   Updated: 2017/10/01 19:41:48 by gquesnot         ###   ########.fr       */
+/*   Updated: 2017/10/06 18:34:46 by gquesnot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void		ft_putnbr(int nbr)
 		ft_putnbr(nbr / 10);
 		ft_putnbr(nbr % 10);
 	}
-	if (nbr <= 10)
+	if (nbr < 10)
 		ft_putchar('0' + nbr);
 }

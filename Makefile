@@ -6,13 +6,13 @@
 #*   By: gquesnot <gquesnot@student.le-101.fr>      +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2017/09/30 20:21:34 by gquesnot          #+#    #+#             *#
-#*   Updated: 2017/10/06 03:53:16 by gquesnot         ###   ########.fr       *#
+#*   Updated: 2017/10/06 18:37:41 by gquesnot         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
 NAME	= queen
 
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -O3
 
 LFLAGS = -L libft/ -lft
 
